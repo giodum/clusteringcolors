@@ -1,0 +1,16 @@
+# Ignore IDE project folders #
+#############################
+.idea
+/nbproject
+
+# OS generated files #
+######################
+.DS_Store*
+._.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Gulp node modules #
+#####################
+node_modules
