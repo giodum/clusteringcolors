@@ -1,3 +1,15 @@
-body {
-  background: red;
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 2em;
+  width: 100%;
+}
+.controls-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
