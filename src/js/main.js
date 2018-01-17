@@ -1,8 +1,11 @@
+var clusterMaker = require('clusters');
+
 $(function() {
 
   console.log("Start main js");
 
   var nItems = 150;
+  var nClusters = 5;
   var items = [];
 
   var container = $('.container');
@@ -11,7 +14,10 @@ $(function() {
   for(var i = 0; i < nItems; i++) {
 
     var selector = 'item-' + i;
-    var color = randomColor();
+    var color = randomColor({
+       luminosity: 'bright',
+       format: 'rgb'
+    });
 
     container.append('<div class="item ' + selector + '"></div>');
     $('.' + selector).css('background-color', color);
@@ -19,9 +25,11 @@ $(function() {
     items[i] = color;
   }
 
-  for(var i = 0; i < nItems; i++) {
-    console.log(i, items[i]);
-  }
+  /* initialization of K-means parameter */
+  clusterMaker.k(nClusters);
+  clusterMaker.iterations(nItems);
+
+
 
   console.log("End main js");
 

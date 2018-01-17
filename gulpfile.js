@@ -16,6 +16,7 @@ var gulp = require('gulp');
 /* GULP PLUGINS */
 /****************/
 var autoprefix = require('gulp-autoprefixer');
+var browserify = require('gulp-browserify');
 var clean = require('gulp-clean-dest');
 var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
@@ -52,6 +53,9 @@ gulp.task('sass', function() {
 
 gulp.task('scripts', function() {
   gulp.src([jsOrigin + '**/*.js'])
+  .pipe(browserify({
+          insertGlobals : true
+        }))
   .pipe(clean(jsDestination))
   .pipe(sourcemaps.init())
   .pipe(concat('main.js'))
