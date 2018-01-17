@@ -62,8 +62,41 @@ $(function() {
   /* generate clusters containers */
   for(var i = 0; i < nClusters; i++) {
 
+    var clusterCentroid = clusters[i].centroid;
+
     var selector = 'cluster-' + i;
+
     containerClustered.append('<div class="cluster ' + selector + '"></div>');
+    var clusterDiv = $('.' + selector);
+
+    var clusterHeading = '<div class="cluster-info cluster-info-' + i + '">'
+                       +   '<h2>Cluster ' + i + '</h2>'
+                       +   '<div class="item cluster-centroid cluster-centroid-' + i + '"></div>'
+                       + '</div>';
+    clusterDiv.append(clusterHeading);
+
+    var clusterCentroidDiv = $('.cluster-centroid-' + i);
+    clusterCentroidDiv.css('background-color', Color.rgb(clusterCentroid).string());
+
+    var clusterItems = clusters[i].points;
+    var clusterItemsL = clusters[i].points.length;
+
+    var clusterItemsContainer = '<div class="cluster-items cluster-items-' + i + '"></div>';
+    clusterDiv.append(clusterItemsContainer);
+
+    var clusterItemsDiv = $('.cluster-items-' + i);
+
+    for(var j = 0; j < clusterItemsL; j++) {
+
+      var clusterItem = clusterItems[j];
+
+      var item = '<div class="item item-' + i + '-' + j + '"></div>';
+      clusterItemsDiv.append(item);
+
+      var item = $('.item-' + i + '-' + j);
+      item.css('background-color', Color.rgb(clusterItem).string());
+
+    }
   }
 
   console.log("END RENDERING CLUSTERS");
