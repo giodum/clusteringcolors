@@ -401,13 +401,28 @@ input[type="button"] {
   margin-top: .5em;
   width: 5em; }
 
-.container {
+.container-unclustered {
   -ms-flex-align: start;
       align-items: flex-start;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 2em;
+  width: 100%; }
+
+.container-clustered {
+  -ms-flex-align: start;
+      align-items: flex-start;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   padding-bottom: 2em;
   padding-left: 1em;
   padding-right: 1em;

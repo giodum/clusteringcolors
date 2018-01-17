@@ -21,6 +21,7 @@
     "gulp-uglify": "^1.5.3"
   },
   "dependencies": {
-    "clusters": "0.0.4"
+    "clusters": "0.0.4",
+    "color": "^2.0.1"
   }
 }

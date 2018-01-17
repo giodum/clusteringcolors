@@ -1,7 +1,18 @@
-.container {
+.container-unclustered {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 2em;
+  width: 100%;
+}
+.container-clustered {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-bottom: 2em;
   padding-left: 1em;
   padding-right: 1em;
